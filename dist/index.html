@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+  <meta charset="UTF-8">
+  <title>Projet 1 : devoir SVG</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css-js/css/style.css">
+  <link rel="stylesheet" href="css-js/css/style-barre.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css-js/css/img-zoom.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+  
+
+
+  <!-- bootstrap barre -->
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="style-barre.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- CDN -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  
+  <!-- zoom -->
+  <script type="text/javascript"> 
+          this.zoom_image = function(){  
+              xOffset = 20;
+              yOffset = 10;
+              $("a.zoom").hover(function(e){
+                      this.texte = this.title;
+                      this.title = "";
+                      //alert(this.src);
+                      var legende = (this.texte != "") ? "<br/>" + this.texte : "";
+                      $("body").append("<p id='zoom'><img src='"+ this.href +"'alt=’Visualisation image’ />"+ legende +"</p>");
+
+                      // $("#zoom").css("top",(e.pageY - yOffset) + "px").css("right",(e.pageX + xOffset) + "px").fadeIn("slow");
+                      $("#zoom").css("top",(e.pageY - yOffset) + "px").css("left",(e.pageX - xOffset) + "px").fadeIn("slow");
+              },
+              function(){
+                  this.title = this.texte;
+                  //alert(" je sors de la vignette");
+                  $("#zoom").remove();
+              });
+
+              $("a.zoom").mousemove(function(e){
+                  $("#zoom")
+                      .css("top",(e.pageY - yOffset) + "px")
+                      // .css("right",(e.pageX + xOffset) + "px");
+                      .css("left",(e.pageX + xOffset) + "px");
+              });
+          };
+
+              $(document).ready(function(){
+                  zoom_image();
+              });
+          //]]>
+  </script>
+
+</head>
+
+
+<body>
+    <!-- barre -->
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="container" id="menu">
+
+            <!-- <div class="container inner"> -->
+              <h3 class="masthead-brand" style="color: white;">Apprendre le corps humain</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#Survoler le corps de Sam">Accueil</a></li>
+                  <li><a href="#Survoler les organes">Les organes</a></li>
+                  <li><a href="#affiliation">Affiliation</a></li>
+                  <li><a href="#information">Informations</a></li>
+                </ul>
+              </nav>
+        </div>
+
+
+          <div class="container" id="content">
+            <div class="row">
+              <div class="col-sm-6"><h1 class="titre" id="Survoler le corps de Sam">Survoler le corps de Sam</h1></div>
+              <div class="col-sm-12 " style="height: 600px;">
+                <!-- partial:index.partial.html -->
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">
+                  <rect width="100%" height="100%" fill="#E7E7E8"/>
+                  <image xmlns:xlink= "http://www.w3.org/1999/xlink" xlink:href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/a.svg" width="100%" height="100%" />
+                </svg>
+      
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">
+                  <defs>
+                    <clipPath id="mask">
+                      <circle id="mask-circle" cx="50%" cy="50%" r="8%" style="fill: #ffffff"/>
+                    </clipPath>
+                  </defs>
+                  <g clip-path="url(#mask)">
+                    <rect width="100%" height="100%" fill="#272730"/>
+                    <image xmlns:xlink= "http://www.w3.org/1999/xlink" xlink:href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/b.svg" width="100%" height="100%" />
+                  </g>
+                  <circle id="circle-shadow" cx="50%" cy="50%" r="8%" style="stroke: rgb(177, 31, 31); fill: transparent; stroke-width: 5;" />
+                </svg>
+
+                
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      <!-- barre -->
+<div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+      <h1 class="titre" id="information">
+        Devoir réaliser par Dina BELRHAZI <br>
+        Rendu le 02/12/2019
+    </h1>  
+
+
+<h1 class="titre" id="Survoler les organes">Survoler les organes</h1>
+
+      <!-- images -->
+        <!-- <div class="container">
+            <div class="row">
+                <div class="col-sm-12"> -->
+                    <ul>
+                        <li>
+                            <a href="img/cerveau-zoom.jpg" class="zoom" title="Cerveau" >
+                                <img src="img/cerveau.svg" alt="" class="test" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="img/poumon-zoom.jpg" class="zoom" title="Poumons" >
+                                    <img src="img/poumons.svg" class="test" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="img/coeur-zoom.jpg" class="zoom" title="Coeur">
+                                <img src="img/coeur.svg" alt="" class="test" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="img/estomac-zoom.jpg" class="zoom" title="Estomac">
+                                <img src="img/estomac.svg" alt="" class="test" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="img/pancreas-zoom.jpg" class="zoom" title="Pancreas">
+                                    <img src="img/pancreas.svg" class="test" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="img/foie-zoom.jpg" class="zoom" title="Foie">
+                                <img src="img/foie.svg" alt="" class="test" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="img/reins-zoom.jpg" class="zoom" title="Reins">
+                                <img src="img/reins.svg" alt="" class="test" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="img/gros-intestin-zoom.jpg" class="zoom" title="Gros intestin">
+                                <img src="img/gros-intestin.svg" alt="" class="test" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="img/intestin-grele-zoom.jpeg" class="zoom" title="Intestin grêle">
+                                    <img src="img/large-intestine.svg" class="test" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="img/vessie-zoom.jpg" class="zoom" title="Vessie">
+                                <img src="img/vessie.svg" alt="" class="test" />
+                            </a>
+                        </li>
+                    </ul>
+                    
+    </div>
+</div>
+<h1 class="titre" id="information"></h1>
+        Et si on entretenait notre corps tout en profitant du paysage !
+</h1>
+<div class="affiliation" id="affiliation">
+    
+  <a href="https://release.bluepants.fr/visite-guidee-francophone-sept-collines-lisbonne-velo-electrique?aid=dina" target="_blank">
+    <img src="img/affiliation.jpg" alt="">
+  </a>
+</div>
+
+ 
+
+
+      <!-- <?php include('Organes_du_corps_humain.html'); ?> -->
+      
+<br>
+      
+    
+
+<!-- partial -->
+  <script  src="css-js/js/script.js"></script>
+
+</body>
+</html>

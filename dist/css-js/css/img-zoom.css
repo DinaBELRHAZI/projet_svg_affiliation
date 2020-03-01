@@ -1,0 +1,54 @@
+/*
+ * CSS partie organes
+ */
+
+.titre {
+            clear:both;
+            font-size: 4em;
+            font-weight:normal;
+            margin: 0px;
+            padding-top: 10px;
+            padding-bottom: 15px;
+            font-family: 'Indie Flower', cursive;
+            color: rgba(0,0,0,.4);
+        }
+
+        a { 
+            text-decoration:none;
+            color:black;
+            padding: 15px;
+            
+          }
+
+        img { 
+            border: 1px solid black;            
+            
+            }
+        
+        .test{
+            width: 200px;
+            height: 200px;
+            
+        }
+        ul,li { 
+                margin: 80px;
+                padding: 0px;
+              }
+
+        li { 
+            list-style: none;
+            float: left;
+            display: inline;
+            margin-right: 10px;
+            /* margin-top: 60px; */
+           }
+
+        #zoom { 
+                position: absolute;
+                border: 1px solid #333;
+                background: #333;
+                padding: 3px;
+                display: none;
+                color: #fff;
+                font-size: 26px;
+              }
